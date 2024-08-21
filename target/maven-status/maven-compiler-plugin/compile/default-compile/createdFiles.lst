@@ -1,0 +1,6 @@
+com\morales\dog_social_network\controllers\UserController.class
+com\morales\dog_social_network\models\User.class
+com\morales\dog_social_network\controllers\WebController.class
+com\morales\dog_social_network\repositories\UserRepository.class
+com\morales\dog_social_network\DogSocialNetworkApplication.class
+com\morales\dog_social_network\services\UserService.class
