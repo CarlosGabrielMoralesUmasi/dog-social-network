@@ -60,7 +60,10 @@
             <input type="hidden" name="id" th:value="${user.id}">
             <input type="text" name="username" th:value="${user.username}" placeholder="Nombre de Usuario" required>
             <input type="email" name="email" th:value="${user.email}" placeholder="Correo Electrónico" required>
-            <input type="password" name="password" placeholder="Contraseña">
+            <input type="text" name="fullName" th:value="${user.fullName}" placeholder="Nombre Completo" required>
+            <textarea name="bio" placeholder="Biografía" th:text="${user.bio}"></textarea>
+            <input type="text" name="gender" th:value="${user.gender}" placeholder="Género">
+            <input type="text" name="location" th:value="${user.location}" placeholder="Ubicación" readonly>
             <input type="file" name="profilePicture" accept="image/*">
             <button type="submit">Guardar Perfil</button>
         </form>

@@ -54,11 +54,13 @@
         <h2>Perfil de Usuario</h2>
         <p><strong>Nombre de Usuario:</strong> <span th:text="${user.username}"></span></p>
         <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Nombre Completo:</strong> <span th:text="${user.fullName}"></span></p>
+        <p><strong>Biografía:</strong> <span th:text="${user.bio}"></span></p>
+        <p><strong>Género:</strong> <span th:text="${user.gender}"></span></p>
+        <p><strong>Ubicación:</strong> <span th:text="${user.location}"></span></p>
         <p><strong>Imagen de Perfil:</strong></p>
         <img th:src="@{${user.profilePicture}}" alt="Profile Picture" style="margin-top: 10px; width: 100%; max-width: 150px;">
-        <form th:action="@{/profile}" method="get">
-            <button type="submit">Actualizar Perfil</button>
-        </form>
+        <a th:href="@{/profile(username=${user.username})}" class="btn btn-primary">Actualizar Perfil</a>
     </div>
 </body>
 </html>

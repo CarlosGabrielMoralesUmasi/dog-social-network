@@ -59,6 +59,10 @@ public class WebController {
     public String handleProfileUpdate(@RequestParam("id") Long id,
                                       @RequestParam("username") String username,
                                       @RequestParam("email") String email,
+                                      @RequestParam("fullName") String fullName,
+                                      @RequestParam("bio") String bio,
+                                      @RequestParam("gender") String gender,
+                                      @RequestParam("location") String location,
                                       @RequestParam(value = "password", required = false) String password,
                                       @RequestParam("profilePicture") MultipartFile profilePicture,
                                       Model model) throws IOException {
@@ -70,6 +74,10 @@ public class WebController {
 
         user.setUsername(username);
         user.setEmail(email);
+        user.setFullName(fullName);
+        user.setBio(bio);
+        user.setGender(gender);
+        user.setLocation(location);
 
         if (password != null && !password.isEmpty()) {
             user.setPassword(password);  // Actualiza la contraseña solo si se proporciona una nueva
@@ -78,7 +86,7 @@ public class WebController {
         userService.updateUser(id, user, profilePicture);
 
         model.addAttribute("user", user);
-        return "profileView";  // Redirige a la vista con los datos del usuario
+        return "redirect:/profileView?username=" + username;  // Redirige a la vista con los datos del usuario
     }
 
     @GetMapping("/register")
@@ -102,6 +110,7 @@ public class WebController {
         newUser.setUsername(username);
         newUser.setEmail(email);
         newUser.setPassword(password);
+        newUser.setLocation("Perú"); // Asignar ubicación por defecto
 
         userService.createUser(newUser);
 

@@ -25,6 +25,12 @@ public class User {
     private String email;
 
     private String profilePicture;
+    private String fullName;
+    private String bio;
+    private String gender;
+
+    @Column(nullable = false)
+    private String location = "Peru"; // Set default value as Peru
 
     // Getters y Setters
 
@@ -66,5 +72,37 @@ public class User {
 
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
