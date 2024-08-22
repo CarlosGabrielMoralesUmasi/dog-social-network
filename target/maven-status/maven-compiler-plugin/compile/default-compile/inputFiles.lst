@@ -5,6 +5,7 @@ D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\re
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\services\UserService.java
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\models\Dog.java
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\models\Post.java
+D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\config\WebConfig.java
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\controllers\WebController.java
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\controllers\PostController.java
 D:\red_social\dog-social-network\src\main\java\com\morales\dog_social_network\controllers\UserController.java

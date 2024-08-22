@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Perfil de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Profile Page</h1>
-    <p>Welcome to your profile!</p>
+    <div class="profile-container">
+        <h2>Perfil de Usuario</h2>
+        <form th:action="@{/profile}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" th:value="${user.id}">
+            <input type="text" name="username" th:value="${user.username}" placeholder="Nombre de Usuario" required>
+            <input type="email" name="email" th:value="${user.email}" placeholder="Correo Electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña">
+            <input type="file" name="profilePicture" accept="image/*">
+            <button type="submit">Guardar Perfil</button>
+        </form>
+        <img th:src="@{${user.profilePicture}}" alt="Profile Picture" style="margin-top: 10px; width: 100%; max-width: 150px;">
+    </div>
 </body>
 </html>
