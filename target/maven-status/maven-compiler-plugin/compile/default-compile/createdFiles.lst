@@ -1,6 +1,12 @@
 com\morales\dog_social_network\controllers\UserController.class
 com\morales\dog_social_network\controllers\WebController.class
+com\morales\dog_social_network\models\Comment.class
+com\morales\dog_social_network\repositories\CommentRepository.class
 com\morales\dog_social_network\DogSocialNetworkApplication.class
+com\morales\dog_social_network\controllers\PostController.class
+com\morales\dog_social_network\models\Post.class
+com\morales\dog_social_network\repositories\PostRepository.class
+com\morales\dog_social_network\services\PostService.class
 com\morales\dog_social_network\models\User.class
 com\morales\dog_social_network\repositories\UserRepository.class
 com\morales\dog_social_network\config\WebConfig.class

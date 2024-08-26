@@ -37,16 +37,10 @@ public class WebController {
             model.addAttribute("error", "Contraseña incorrecta");
             return "login";
         }
-
-        // Verificar si el perfil del usuario está completo
-        if (user.getProfilePicture() != null && !user.getProfilePicture().isEmpty()) {
-            // Redirigir a la vista del perfil si ya está completo
-            return "redirect:/profileView?username=" + username;
-        } else {
-            // Si el perfil no está completo, redirigir a la página de actualización del perfil
-            return "redirect:/profile?username=" + username;
-        }
+    
+        return "redirect:/posts?username=" + username;
     }
+    
 
     @GetMapping("/profile")
     public String showProfile(Model model, @RequestParam("username") String username) {
